@@ -3,9 +3,11 @@
 
 int main()
 {
-    String* text = new String();
-    
+    String* text = new String("Hello world");
 
-    std::cout << text->CStr();
+    std::cout << text->CString();
+
+    
+    
 }
 

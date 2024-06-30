@@ -1,23 +1,30 @@
 #include "String.h"
 #include <iostream>
+#include <cstring>
 
 String::String()
 {
+	
 }
 
 String::String(const char* _str)
 {
-	
+	str = _str;
+
 }
 
-String::String(String& const other)
+
+String::~String()
 {
+	delete[] str;
+
 }
 
-const char* String::CStr() const
+const char* String::CString()
+
 {
-	
 
-
-	return nullptr;
+	return str;
 }
+
+
