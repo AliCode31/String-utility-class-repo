@@ -19,7 +19,7 @@ public:
 
 	size_t Length();
 
-
+	const char& CharacterAt(int index);
 	
 
 

@@ -33,4 +33,16 @@ size_t String::Length()
 	return size_t(strlen(str));
 }
 
+const char& String::CharacterAt(int index)
+{
+	
+
+
+	return  (str[index]);
+
+	
+}
+
+
+
 
