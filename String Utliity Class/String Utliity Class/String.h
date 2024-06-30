@@ -17,10 +17,10 @@ public:
 		
     const char* CString();
 
+	size_t Length();
 
 
-
-
+	
 
 
 
