@@ -2,7 +2,8 @@
 
 class String {
 
-	const char* str;
+	char* str;
+	
 public:
 
 	String();
@@ -21,7 +22,8 @@ public:
 
 	const char& CharacterAt(int index);
 	
+    bool EqualTo(const String& equalStr) const ;
 
-
-
+	String& Append(const String& _str);
+	//String& Prepend(const String& _str);
 };

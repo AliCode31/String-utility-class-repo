@@ -4,10 +4,17 @@
 int main()
 {
     String* text = new String("Hello world");
-    String* text2 = new String("Hello Void");
-    std::cout << text->CharacterAt(10) << std::endl;
-
- 
+    String* text2 = new String("Buh bye world");
     
+  
+    
+     text->Append(*text2);
+    
+     std::cout << text->CString();
+
+   
+ 
+    delete text;
+    delete text2;
 }
 
