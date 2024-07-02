@@ -3,15 +3,22 @@
 
 int main()
 {
-    String* text = new String("Hello world");
-    String* text2 = new String("Buh bye world");
+    String* text = new String("Hello");
+    String* text2 = new String("Hfllo");
+    
+
     
   
+    if (text->operator<(*text2)) {
+        std::cout << "It is less then";
+    }
+    else {
+        std::cout << "It is not";
+    }
     
-     text->Append(*text2);
     
-     std::cout << text->CString();
-
+    //std::cout << text->CString();
+    
    
  
     delete text;

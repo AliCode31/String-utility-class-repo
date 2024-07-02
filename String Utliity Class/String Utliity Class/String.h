@@ -26,4 +26,16 @@ public:
 
 	String& Append(const String& _str);
 	//String& Prepend(const String& _str);
+
+public:
+
+	bool operator==(const String& _other);
+	bool operator!=(const String& _other);
+	bool operator<(const String& _other);
+
+	char& operator[](size_t _index);
+	const char& operator[](size_t _index) const;
+
+
+
 };
