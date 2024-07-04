@@ -16,7 +16,7 @@ public:
 	
 	public:
 		
-    const char* CString();
+    
 
 	size_t Length();
 
@@ -25,16 +25,30 @@ public:
     bool EqualTo(const String& equalStr) const ;
 
 	String& Append(const String& _str);
-	//String& Prepend(const String& _str);
+	String& Prepend(const String& _str);
 
+	size_t Find(const String& _str);
+	size_t Find(size_t _startIndex, const String& _str);
+	String& Replace(const String& _strFind, const String& _replaceStr );
+
+
+
+	const char* CString();
+	String& ReadFromConsole();
+	String& WriteToConsole();
+
+	String& Uppercase();
+	String& Lowercase();
 public:
 
-	bool operator==(const String& _other);
-	bool operator!=(const String& _other);
-	bool operator<(const String& _other);
+	bool operator ==(const String& _other);
+	bool operator !=(const String& _other);
+	bool operator <(const String& _other);
 
-	char& operator[](size_t _index);
-	const char& operator[](size_t _index) const;
+	String& operator=(const String& _other);
+
+	char& operator [](size_t _index);
+	const char& operator [](size_t _index) const;
 
 
 

@@ -1,25 +1,20 @@
 #include <iostream>
 #include "String.h"
+#include  <string>
 
 int main()
 {
-    String* text = new String("Hello");
-    String* text2 = new String("Hfllo");
+    String* text = new String("sftsdftdsfstdfgstsdgftsdfdsdtsdrtgrdfrgdy ");
+    String* text2 = new String("t");
+    
+    String* text3 = new String("0");
+    text->WriteToConsole();
+    std::cout << "\n";
+    text->Replace(*text2, *text3);
+    std::cout << "\n";
+    text->WriteToConsole();
     
 
-    
-  
-    if (text->operator<(*text2)) {
-        std::cout << "It is less then";
-    }
-    else {
-        std::cout << "It is not";
-    }
-    
-    
-    //std::cout << text->CString();
-    
-   
  
     delete text;
     delete text2;

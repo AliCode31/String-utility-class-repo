@@ -1,8 +1,10 @@
 #include "String.h"
 #include <iostream>
 #include <cstring>
-#include <sstream>
 #include <exception>
+
+#define SIZE_T_MAX ((size_t)-1)
+
 
 String::String()
 {
@@ -24,11 +26,259 @@ String::~String()
 
 }
 
+size_t String::Find(const String& _str)
+{
+	size_t _strLength = strlen(_str.str) +1;
+	char* tempStr = new char[_strLength];
+	tempStr[0] = '\0';
+
+	//Turns the string into a char array
+	for (int i = 0; i < _strLength; i++) {
+		tempStr[i] = _str.str[i];	    
+	}
+ 
+	// Finds the string
+	size_t length = strlen(str) + 1;
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+
+	bool firstChar = true;
+	while (b < length)
+	{
+
+
+
+		if (tempStr[a] != str[b])
+		{
+			firstChar = true;
+			b++;
+			a = 0;
+			if (b >= length) 
+			{
+				break;
+			}
+			continue;
+		}
+		
+		if (tempStr[a] == str[b]) 
+		{
+			if (firstChar) 
+			{
+				firstChar = false;
+				c = b;
+			}
+			a++;
+			b++;
+			if (a == _strLength -1) 
+			{
+				return size_t(c);
+			}
+		}
+		
+	}
+    
+
+	delete tempStr;
+	return size_t SIZE_T_MAX;
+}
+
+size_t String::Find(size_t _startIndex, const String& _str)
+{
+
+	size_t _strLength = strlen(_str.str) + 1;
+	char* tempStr = new char[_strLength];
+	tempStr[0] = '\0';
+
+	//Turns the string into a char array
+	for (int i = 0; i < _strLength; i++) {
+		tempStr[i] = _str.str[i];
+	}
+
+	// Finds the string
+	size_t length = strlen(str) + 1;
+
+	
+	int a = 0;
+	int b = _startIndex;
+	int c = 0;
+
+	bool firstChar = true;
+	while (b < length)
+	{
+
+
+
+		if (tempStr[a] != str[b])
+		{
+			firstChar = true;
+			b++;
+			a = 0;
+			if (b >= length)
+			{
+				break;
+			}
+			continue;
+		}
+
+		if (tempStr[a] == str[b])
+		{
+			if (firstChar)
+			{
+				firstChar = false;
+				c = b;
+			}
+			a++;
+			b++;
+			if (a == _strLength - 1)
+			{
+				return size_t(c);
+			}
+		}
+
+	}
+
+
+	delete tempStr;
+	return size_t SIZE_T_MAX;
+}
+
+String& String::Replace(const String& _strFind, const String& _replaceStr)
+{
+	size_t _strLength = strlen(_strFind.str) + 1;
+	char* tempStr = new char[_strLength];
+	tempStr[0] = '\0';
+
+	//Turns the string into a char array
+	for (int i = 0; i < _strLength; i++) {
+		tempStr[i] = _strFind.str[i];
+	}
+
+	// Finds the string
+	size_t length = strlen(str) + 1;
+	size_t replaceLength = strlen(_replaceStr.str) + 1;
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+
+	bool firstChar = true;
+	bool setStr = true;
+
+
+	char* tempMainStr = str;
+	;
+	while (b < length)
+	{
+		//Replacing the string
+		if (d > 0) 		
+		{
+			
+			for (int i = 0; i < replaceLength; i++)
+			{
+				if (i == replaceLength - 1)
+				{					
+					str = new char[length];
+					str[0] = '\0';
+					strcat_s(str, length, tempMainStr);
+					d--;
+					setStr = false;
+				}
+				str[b] = _replaceStr[i];
+				b++;
+				size_t length = strlen(str) + 1;
+				if (setStr) 
+				{
+					tempMainStr = str;
+				}
+			}
+			if (!setStr)
+			{
+				str = new char[length];
+				str[0] = '\0';
+				strcat_s(str, length, tempMainStr);
+				
+			}
+			b = 0;
+			c = 0;
+			setStr = true;
+		}
+
+
+
+
+		if (tempStr[a] != str[b])
+		{
+			firstChar = true;
+			b++;
+			a = 0;
+			if (b >= length)
+			{
+				break;
+			}
+			continue;
+		}
+
+		if (tempStr[a] == str[b])
+		{
+			if (firstChar)
+			{
+				firstChar = false;
+				c = b;
+			}
+			a++;
+			b++;
+			if (a == _strLength - 1)
+			{
+				d++;
+				b = c;
+
+			}
+		}
+
+	}
+
+
+	delete tempStr;
+	return *this;
+}
+
 const char* String::CString()
 
 {
 
 	return str;
+}
+
+String& String::ReadFromConsole()
+{
+	std::cin >> str;
+
+	return *this;
+}
+
+String& String::WriteToConsole()
+{
+	std::cout << str;
+
+	return *this;
+}
+
+String& String::Uppercase()
+{
+	int length = strlen(str) + 1;
+	
+	_strupr_s(str, length);
+	return *this;
+}
+
+String& String::Lowercase()
+{
+	int length = strlen(str) + 1;
+	_strlwr_s(str, length);
+	return *this;
 }
 
 size_t String::Length()
@@ -64,42 +314,38 @@ bool String::EqualTo(const String& equalStr) const
 
 String& String::Append(const String& _str)
 {
-	int length = strlen(_str.str) + strlen(str) + 1;
-	
-	
-	char* append = nullptr;
-	
-	//*append = str 
+	char* tempStr = str;
 
-	//append = *str + *_str.str;
-	*append = strcat_s(str, length, _str.str);
+	int length = strlen(_str.str) + strlen(str) + 1;
 	str = new char[length];
+	str[0] = '\0';
 	
-	strcpy_s(str,length, append);
+	
+    strcat_s(str, length, tempStr);
+	strcat_s(str, length, _str.str);
+
 
 
 	return *this;
 
 }
 
+String& String::Prepend(const String& _str)
+{
+	char* tempStr = str;
+
+	int length = strlen(_str.str) + strlen(str) + 1;
+	str = new char[length];
+	str[0] = '\0';
+	
+	
+    strcat_s(str, length, _str.str);
+	strcat_s(str, length, tempStr);
 
 
 
-
-//String& String::Prepend(const String& _str)
-//{
-//	
-//}
-
-
-
-
-
-
-
-
-
-
+	return *this;
+}
 
 bool String::operator==(const String& _other)
 {
@@ -122,6 +368,15 @@ bool String::operator<(const String& _other)
 	else return false;
 }
 
+String& String::operator=(const String& _other)
+{
+	int length = strlen(_other.str) + 1;
+	str = new char[length];
+	strcpy_s(str, length, _other.str);
+
+
+	return *this;
+}
 
 
 
@@ -130,7 +385,7 @@ bool String::operator<(const String& _other)
 char& String::operator[](size_t _index)
 {
 	
-	if (_index > strlen(str) || _index > strlen(str))
+	if (_index > strlen(str) || _index < 0)
 		throw std::out_of_range("Out of range");
 
 	else
@@ -140,7 +395,7 @@ char& String::operator[](size_t _index)
 const char& String::operator[](size_t _index) const
 {
 
-	if (_index > strlen(str) || _index > strlen(str))
+	if (_index > strlen(str) || _index < 0)
 		throw std::out_of_range("Out of range");
 
 	else
