@@ -4,7 +4,7 @@ class String {
 
 	char* str;
 	
-public:
+public: //Constructors
 
 	String();
 	String(const char* _str);
@@ -14,7 +14,7 @@ public:
 	~String();
 
 	
-	public:
+	public: //Functions
 		
     
 
@@ -39,7 +39,7 @@ public:
 
 	String& Uppercase();
 	String& Lowercase();
-public:
+public: // Operators
 
 	bool operator ==(const String& _other);
 	bool operator !=(const String& _other);
@@ -51,5 +51,27 @@ public:
 	const char& operator [](size_t _index) const;
 
 
+public: // Test functions
+
+	bool TestSetStringNoValue();
+	bool TestSetStringValue();
+
+	bool TestLength();
+	bool TestCharacterAt();
+	bool TestEqualTo();
+
+	bool TestAppend();
+	bool TestPrepend();
+
+	bool TestFind();
+	bool TestFindWithStartIndex();
+	bool RestReplace();
+
+	bool TestCString();
+	bool TestReadFromConsole();
+	bool TestWriteToConsole();
+
+	bool TestUppercase();
+	bool TestLowercase();
 
 };
