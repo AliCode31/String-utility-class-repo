@@ -807,6 +807,78 @@ bool String::TestLowercase()
 
 	return false;
 }
+
+bool String::TestOperatorEquals()
+{
+	String stringOne = "Hello";
+	String stringTwo = "Hello";
+
+	if (stringOne == stringTwo) {
+		return true;
+	}
+	else return false;
+}
+
+bool String::TestOperatorNotEquals()
+{
+	String stringOne = "Hello";
+	String stringTwo = "Hello!";
+
+	if (stringOne != stringTwo) {
+		return true;
+	}
+	else return false;
+}
+
+bool String::TestOperatorLessThan()
+{
+	String stringOne = "Hello";
+	String stringTwo = "Hello!";
+
+	if (stringOne < stringTwo) {
+		return true;
+	}
+	return false;
+}
+
+bool String::TestOperatorSet()
+{	
+	String stringOne = "Hello";
+	String stringTwo = "Hello World!";
+
+	stringOne = stringTwo;
+
+	if (stringOne == "Hell World!") {
+		return true;
+	}
+
+	return false;
+}
+
+bool String::TestOperatorSubscript()
+{
+	bool testOne = false;
+	bool testTwo = false;
+	String stringOne = "Hello";
+	const String stringTwo = "Hello!";
+
+	char stringOneS = stringOne[3];
+	const char stringTwoS = stringTwo[5]  ;
+
+	if (stringOneS == 'l') {
+		testOne = true;
+	}
+
+	if (stringTwoS == '!') {
+		testOne = true;
+	}
+
+	if (testOne && testTwo) {
+		return true;
+	}
+
+	return false;
+}
 	
 
 

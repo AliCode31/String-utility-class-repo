@@ -1,9 +1,12 @@
 #include <iostream>
 #include "String.h"
-#include  <string>
-
+#include <fstream>
 int main()
 {
+    std::fstream fileTest;
+
+    
+
 
 
     String* text = new String(); 
@@ -12,7 +15,11 @@ int main()
     
     String* text3 = new String("Spiderman");
 
-    std::cout << "                   Testing results for String Class\n\n\n";
+
+
+
+  
+  std::cout  << "                   Testing results for String Class\n\n\n";
 
     std::cout <<"________________________" << __TIME__ << " " << __DATE__ << "_________________________" << "\n\n\n";
 
@@ -151,7 +158,50 @@ int main()
 
     }
     else std::cout << "Lowercase() has [Failed]\n\n";
+
+
+
+    std::cout << "Testing......Operator==:\n";
+    if (text2->TestOperatorEquals()) {
+        std::cout << "Operator== is[Successful]\n\n";
+
+    }
+    else std::cout << "Operator== has [Failed]\n\n";
  
+
+
+    std::cout << "Testing......Operator!=:\n";
+    if (text2->TestOperatorNotEquals()) {
+        std::cout << "Operator!= is[Successful]\n\n";
+
+    }
+    else std::cout << "Operator!= has [Failed]\n\n";
+
+
+
+    std::cout << "Testing......Operator<:\n";
+    if (text2->TestOperatorLessThan()) {
+        std::cout << "Operator< is[Successful]\n\n";
+
+    }
+    else std::cout << "Operator< has [Failed]\n\n";
+
+
+
+    std::cout << "Testing......Operator[]:\n";
+    if (text2->TestOperatorLessThan()) {
+        std::cout << "Operator[] is[Successful]\n\n";
+
+    }
+    else std::cout << "Operator[] has [Failed]\n\n";
+    
+
+
+    std::cout << "\nAll test results have been comepleted!";
+
+  
+    
+
     delete text;
     delete text2;
     delete text3;

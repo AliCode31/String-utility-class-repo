@@ -74,4 +74,14 @@ public: // Test functions
 	bool TestUppercase();
 	bool TestLowercase();
 
+
+public: //test operators
+
+	bool TestOperatorEquals();
+	bool TestOperatorNotEquals();
+	bool TestOperatorLessThan();
+	bool TestOperatorSet();
+    
+	bool TestOperatorSubscript();
+
 };
