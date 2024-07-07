@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cstring>
 #include <exception>
-#include <string> // Only on test functions
 #define SIZE_T_MAX ((size_t)-1)
 
 
@@ -489,10 +488,6 @@ size_t String::Length()
 
 const char& String::CharacterAt(int index)
 {
-	
-	/*returns a character at the location of the chosen index of 
-	 the string */
-	
 	return  (str[index]);	
 	
 }
@@ -643,6 +638,43 @@ bool String::TestSetStringValue()
 	return false;
 
 
+}
+
+bool String::TestLength()
+{
+	String testOne = "Abandoning";
+
+     if (testOne.Length() == 10) 
+	 {
+		 return true;
+	 }
+
+	 return false;
+}
+
+bool String::TestCharacterAt()
+{
+	String testOne = "Abandoning";
+		char result = testOne.CharacterAt(8);
+	 
+	if (result == 'n')
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool String::TestEqualTo()
+{
+	String stringOne = "Hello!";
+	String stringTwo = "Hello!";
+
+	if (stringOne.EqualTo(stringTwo)) {
+		return true;
+	} 
+
+	return false;
 }
 
 
