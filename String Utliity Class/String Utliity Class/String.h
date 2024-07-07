@@ -65,10 +65,10 @@ public: // Test functions
 
 	bool TestFind();
 	bool TestFindWithStartIndex();
-	bool RestReplace();
+	bool TestReplace();
 
 	bool TestCString();
-	bool TestReadFromConsole();
+	//bool TestReadFromConsole();
 	bool TestWriteToConsole();
 
 	bool TestUppercase();

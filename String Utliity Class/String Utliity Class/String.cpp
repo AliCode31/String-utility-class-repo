@@ -677,5 +677,139 @@ bool String::TestEqualTo()
 	return false;
 }
 
+bool String::TestAppend()
+{
+	String stringOne ="Hello ";
+	String stringTwo = "World!";
+
+	stringOne.Append(stringTwo);
+
+	if (stringOne == "Hello World!") {
+		return true;
+	}
+
+	
+	return false;
+}
+
+bool String::TestPrepend()
+{
+	String stringOne = "World!";
+	String stringTwo = "Goodbye ";
+
+	stringOne.Prepend(stringTwo);
+
+	if (stringOne == "Goodbye World!") {
+		return true;
+	}
+
+
+
+	
+	return false;
+}
+
+bool String::TestFind()
+{
+	String stringOne = "Hello World!";
+	String stringTwo = "World!";
+	if (stringOne.Find(stringTwo) == 6) {
+		return true;
+	}
+
+	return false;
+}
+
+bool String::TestFindWithStartIndex()
+{
+
+	String stringOne = "Hello World Hello World!";
+	String stringTwo = "World";
+	if (stringOne.Find(7, stringTwo) == 18) {
+		return true;
+	}
+
+	return false;
+}
+
+bool String::TestReplace()
+{
+	String stringOne = "Mass Effect Halo Minecraft Persona5 Danganronpa Minecraft Minecraft";
+	String stringTwo = "Minecraft";
+	String stringThree = "Sekiro";
+
+
+	stringOne.Replace(stringTwo, stringThree);
+	if (stringOne == "Mass Effect Halo Sekiro Persona5 Danganronpa Sekiro Sekiro") 
+	{
+		return true; 
+	}
+	return false;
+}
+
+bool String::TestCString()
+{
+	String stringOne = "Cstring has been returned\n";
+	if (std::cout << stringOne.CString()) 
+	{
+		return true;
+	}
+
+	return false;
+
+}
+
+//bool String::TestReadFromConsole()
+ //{
+//	String stringOne = "";
+//
+//	stringOne.ReadFromConsole();
+//	
+//	if (stringOne == "Hello!") {
+//		
+//		return true;
+//
+//	}
+//
+//	return false;
+//}
+
+bool String::TestWriteToConsole()
+{
+
+	String stringOne = "Write to console has been returned\n";
+	stringOne.WriteToConsole();
+
+	return true;
+
+}
+
+bool String::TestUppercase()
+{
+	String stringOne = "hello!";
+	stringOne.Uppercase();
+
+	if (stringOne == "HELLO!") {
+		return true;
+	}
+
+	return false;
+}
+
+bool String::TestLowercase()
+{
+	String stringOne = "HELLO!";
+	stringOne.Lowercase();
+
+	if (stringOne == "hello!") {
+		return true;
+	}
+
+	return false;
+}
+	
+
+
+
 
 
