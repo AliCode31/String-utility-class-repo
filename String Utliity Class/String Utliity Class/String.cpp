@@ -576,8 +576,13 @@ bool String::operator!=(const String& _other)
 
 bool String::operator<(const String& _other)
 {
-	if (str < _other.str) return true;
-	else return false;
+	/*if (str < _other.str) return true;
+	else return false;*/
+
+	if (strcmp(str, _other.str) == -1) {
+		return true;
+	}
+	else false;
 }
 
 String& String::operator=(const String& _other)

@@ -207,7 +207,7 @@ int main()
     
 
 
-    std::cout << "\nAll test results have been comepleted!";
+    std::cout << "\nAll test results have been completed!";
 
   
     //----------------------TO FILE--------------------------------
@@ -403,7 +403,7 @@ int main()
 
 
 
-    fileTest << "\nAll test results have been cod!";
+    fileTest << "\nAll test results have been completed!";
 
     fileTest.close();
     delete text;

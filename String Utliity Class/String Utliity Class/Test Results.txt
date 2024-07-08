@@ -1,7 +1,7 @@
                    Testing results for String Class
 
 
-________________________10:19:27 Jul  8 2024_________________________
+________________________15:38:11 Jul  8 2024_________________________
 
 
 Testing......String():
@@ -63,4 +63,4 @@ Testing......Operator[]:
 Operator[] is[Successful]
 
 
-All test results have been cod!
+All test results have been completed!
