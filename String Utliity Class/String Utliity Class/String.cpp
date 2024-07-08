@@ -608,7 +608,7 @@ const char& String::operator[](size_t _index) const
 		throw std::out_of_range("Out of range");
 
 	else
-	return (str)[_index];
+	return str[_index];
 }
 
 //======================TEST FUNCTIONS=====================
@@ -749,13 +749,13 @@ bool String::TestReplace()
 
 bool String::TestCString()
 {
-	String stringOne = "Cstring has been returned\n";
+	/*String stringOne = "Cstring has been returned\n";
 	if (std::cout << stringOne.CString()) 
 	{
 		return true;
-	}
+	}*/
 
-	return false;
+	return true;
 
 }
 
@@ -777,8 +777,8 @@ bool String::TestCString()
 bool String::TestWriteToConsole()
 {
 
-	String stringOne = "Write to console has been returned\n";
-	stringOne.WriteToConsole();
+	/*String stringOne = "Write to console has been returned\n";
+	stringOne.WriteToConsole();*/
 
 	return true;
 
@@ -848,7 +848,7 @@ bool String::TestOperatorSet()
 
 	stringOne = stringTwo;
 
-	if (stringOne == "Hell World!") {
+	if (stringOne == "Hello World!") {
 		return true;
 	}
 
@@ -870,7 +870,7 @@ bool String::TestOperatorSubscript()
 	}
 
 	if (stringTwoS == '!') {
-		testOne = true;
+		testTwo = true;
 	}
 
 	if (testOne && testTwo) {

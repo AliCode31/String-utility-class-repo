@@ -1,0 +1,66 @@
+                   Testing results for String Class
+
+
+________________________10:19:27 Jul  8 2024_________________________
+
+
+Testing......String():
+String() with no value is [Successful]
+
+Testing......String("string with value"):
+String("string with value") with no value is [Successful]
+
+Testing......Length():
+Length() is [Successful]
+
+Testing......CharacterAt():
+CharacterAt() is [Successful]
+
+Testing......EqualTo():
+EqualTo() is [Successful]
+
+Testing......Append()
+Append() is [Successful]
+
+Testing......Prepend():
+Prepend() is [Successful]
+
+Testing......Find():
+Find() is [Successful]
+
+Testing......Find("with index"):
+Find("with index") is [Successful]
+
+Testing......Replace():
+Replace() is [Successful]
+
+Testing......CString()=======: CString() is [Successful]
+
+Testing......ReadFromConsole():ReadFromConsole() is [Successful]
+
+Testing......WriteToConsole():
+WriteToConole() is [Successful]
+
+Testing......Uppercase():
+Uppercase() is [Successful]
+
+Testing......Lowercase():
+Lowercase() is [Successful]
+
+Testing......Operator==:
+Operator== is [Successful]
+
+Testing......Operator!=:
+Operator!= is [Successful]
+
+Testing......Operator<:
+Operator< is [Successful]
+
+Testing......Operator=
+Operator= is [Successful]
+
+Testing......Operator[]:
+Operator[] is[Successful]
+
+
+All test results have been cod!
